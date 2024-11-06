@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+
+.step {
+    display: none; /* 初始隐藏 */
+    font-size: 1.5em;
+    margin: 20px 0;
+    opacity: 0; /* 初始透明 */
+    transition: opacity 1s; /* 透明度动画 */
+}
+
+.visible {
+    display: block; /* 显示 */
+    opacity: 1; /* 使其完全不透明 */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
