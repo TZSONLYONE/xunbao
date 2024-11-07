@@ -1,28 +1,87 @@
+/* 页面基础设置 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f0f8ff;
+    background: linear-gradient(135deg, #f0f8ff, #e0ffff); /* 渐变背景 */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* 页面标题 */
+h1 {
+    font-size: 3em;
+    color: #ff4500;
+    margin-bottom: 50px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* 文字阴影 */
+}
+
+/* 进度条样式 */
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+    width: 0;
+    transition: width 1s;
+}
+
+/* 每个步骤文本样式 */
 .step {
-    display: none; /* 初始隐藏 */
+    display: none;
     font-size: 1.5em;
     margin: 20px 0;
-    opacity: 0; /* 初始透明 */
-    transition: opacity 1s; /* 透明度动画 */
+    opacity: 0;
+    transform: translateY(30px); /* 初始偏移 */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* 淡入动画 + 向上移动 */
 }
 
+/* 显示步骤时的样式 */
 .visible {
-    display: block; /* 显示 */
-    opacity: 1; /* 使其完全不透明 */
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* 恢复正常位置 */
 }
 
+/* 容器样式 */
 .container {
     margin-top: 50px;
 }
 
+/* 按钮样式 */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1.2em;
     cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 按钮悬停效果 */
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 按钮点击效果 */
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
